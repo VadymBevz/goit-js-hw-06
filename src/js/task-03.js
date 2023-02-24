@@ -12,3 +12,14 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const galleryList = document.querySelector('ul.gallery');
+
+// створюємо рядки HTML для кожного зображення та додаємо їх в список
+const galleryItems = images.map(image => `
+  <li>
+    <img class = "imgsize" src="${image.url}" alt="${image.alt}">
+  </li>`
+);
+galleryList.insertAdjacentHTML('beforeend', galleryItems.join(''));
+galleryList.classList.add('gallery-grid');
